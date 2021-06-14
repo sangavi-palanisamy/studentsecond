@@ -1,0 +1,93 @@
+﻿@model IEnumerable<StudentCore.Core.Models.Studententry>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+
+<span class="lp">  @Html.ActionLink("Resiterpage", "Create")</span>
+<span class="li"> @Html.ActionLink("Logout", "Loginpage")</span>
+
+<table class="table table table-striped">
+    <tr>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Studid)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.SecondName)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Dateofbirth)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Studage)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Favouritesub)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Interestescourse)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Mathsmark)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Chemistrymark)
+        </th>
+        <th class="algin">
+            @Html.DisplayNameFor(model => model.Computermark)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Studid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dateofbirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Studage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Favouritesub)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interestescourse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mathsmark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chemistrymark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Computermark)
+            </td>
+            <td class="li">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Studid })
+            </td>
+            <td class="li">
+                @Html.ActionLink("Delete", "Delete", new { id = item.Studid })
+            </td>
+
+        </tr>
+    }
+
+</table>
+@if (TempData["Message"] != null)
+{
+    <script type="text/javascript"> window.onload = function () { alert("@TempData["Message"]"); };</script>
+}

@@ -1,0 +1,264 @@
+﻿
+@model StudentCore.Core.Models.Studententry
+
+<script src="~/js/site.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@using (Html.BeginForm("Createdetails", "Student", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "formDetails" }))
+{
+    <div class="container bg-warning">
+        <table class="tab">
+            <tr>
+                <td class="row">
+                    @Html.HiddenFor(model => model.Studid)
+                </td>
+
+                <td> @Html.HiddenFor(model => model.Studid)</td>
+
+            </tr>
+
+            <tr>
+                <td class="row">
+                    @Html.LabelFor(model => model.FirstName, new { name = "Firstname" })
+                </td>
+
+                <td> @Html.TextBoxFor(model => model.FirstName)</td>
+
+            </tr>
+
+
+            <tr>
+                <td class="row">  @Html.LabelFor(model => model.SecondName)</td>
+
+                <td> @Html.TextBoxFor(model => model.SecondName)</td>
+
+            </tr>
+            <tr>
+                <td class="row"> @Html.LabelFor(model => model.Dateofbirth)</td>
+
+                <td>@Html.EditorFor(Modal => Modal.Dateofbirth, new { HtmlAttributes = new { @type = "date", value = "{YYYY:MM:DD}", id = "DateOfBirth", onchange = "getAge()" } })
+            </tr>
+            <tr>
+                <td class="row"> @Html.LabelFor(model => model.Studage)</td>
+
+
+                <td> @Html.EditorFor(model => model.Studage, new { id = "age" })</td>
+
+
+            </tr>
+            <tr>
+                <td class="row">@Html.LabelFor(model => model.Favouritesub)</td>
+
+                <td>
+                    @Html.DropDownListFor(Modal => Modal.Favouritesub, new List<SelectListItem> { new SelectListItem() { Text="---Select Department---", Value=""},
+                       new SelectListItem { Text="OOPS", Value="OOPS"},
+                       new SelectListItem { Text="DATA STRUCUTRE", Value="DATA STRUCUTRE"},
+                       new SelectListItem { Text="MOBILE COMPUTING", Value="MOBILE COMPUTING"},
+                       new SelectListItem { Text="PYTHON", Value="PYTHON"},
+                        new SelectListItem { Text="SOFTWARE TESTING", Value="SOFTWARE TESTING"},
+               })
+                </td>
+            </tr>
+            <tr>
+
+                <td class="row">  @Html.LabelFor(model => model.Interestescourse)</td>
+
+                <td>
+                    @Html.DropDownListFor(Modal => Modal.Interestescourse, new List<SelectListItem> { new SelectListItem() { Text="---Select Department---", Value=""},
+                               new SelectListItem { Text=".NET", Value=".NET"},
+                               new SelectListItem { Text="BIG DATA", Value="BIG DATA"},
+                               new SelectListItem { Text="OR", Value="OR"},
+
+                       })
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="row">  @Html.LabelFor(model => model.Mathsmark)</td>
+
+                <td> @Html.TextBoxFor(model => model.Mathsmark)</td>
+
+            </tr>
+            <tr>
+                <td class="row"> @Html.LabelFor(model => model.Chemistrymark)</td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Chemistrymark)
+                </td>
+            </tr>
+            <tr>
+                <td class="row">@Html.LabelFor(model => model.Computermark)</td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Computermark)
+                </td>
+            </tr>
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" onclick="SubmitDetails()" id="buttonName" />
+            </div>
+        </div>
+
+    </div>
+
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript"> window.onload = function () { alert("@ViewBag.Message"); };</script>
+}
+<span class="li">
+    @Html.ActionLink("STUDENTLIST", "StudentDisplay")
+</span>
+<span class="lo">
+    @Html.ActionLink("Back to Login", "Loginpage")
+</span>
+
+<script type="text/javascript">
+
+
+
+    $(function () {
+
+        $("#formDetails").validate({
+            rules: {
+                FirstName:
+                {
+                    required: true,
+                    regex: "^[A-Za-z]{1,30}$"
+                },
+                SecondName:
+                {
+                    required: true,
+                    regex: "^[A-Za-z]{1,30}$"
+                },
+                Dateofbirth:
+                {
+                    required: true
+
+                },
+                Studage:
+                {
+                    required: true
+
+                },
+                Favouritesub:
+                {
+                    required: true
+
+                },
+                Interestescourse:
+                {
+                    required: true
+
+                },
+                Mathsmark:
+                {
+                    required: true,
+
+                    maxlength: 3
+
+                },
+                Chemistrymark:
+                {
+                    required: true,
+                    maxlength: 3
+
+                },
+                Computermark:
+                {
+                    required: true,
+                    maxlength: 3
+
+                }
+
+
+            },
+            messages:
+            {
+                FirstName:
+                {
+                    required: "Name is required",
+                    regex: "Name is Invalid"
+                },
+                SecondName:
+                {
+                    required: "Name is required",
+                    regex: "Name is Invalid"
+
+                },
+                Dateofbirth:
+                {
+                    required: "Dob is required"
+
+                },
+                Studage:
+                {
+                    required: "student age is required"
+
+                },
+                Favouritesub:
+                {
+                    required: "favourite subject is required"
+
+                },
+                Interestescourse:
+                {
+                    required: "Interested course is required"
+
+                },
+                Mathsmark:
+                {
+                    required: "Maths mark is required",
+
+                    maxlength: "Maximum length is 3"
+
+                },
+                Chemistrymark:
+                {
+                    required: "Chemistry mark is required",
+                    maxlength: "Maximum length is 3"
+
+                },
+                Computermark:
+                {
+                    required: "Computer mark is required",
+                    maxlength: "Maximum length is 3"
+
+                }
+
+
+            }
+
+        });
+    });
+
+
+
+    function SubmitDetails() {
+
+        if ($("#formDetails").validate()) {
+            $("#formDetails").submit();
+        }
+    }
+
+
+    function getAge() {
+        var dateString = $("#DateOfBirth").val();
+        //alert(dateString)
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        $('#Studage').val(age);
+        
+    }
+</script>
