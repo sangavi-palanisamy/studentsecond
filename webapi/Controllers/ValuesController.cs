@@ -21,7 +21,7 @@ namespace webapi.Controllers
         }
        
         [HttpGet]
-        public ActionResult Displaydetails()
+        public ActionResult Getvalues()
         {
             var empl = _testService.GetDetails();
             return Ok(empl);
