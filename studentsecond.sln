@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentsecond", "studentsecond\studentsecond.csproj", "{51823ED6-9417-4BCD-A8D6-02B506973F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "studentsecond", "studentsecond\studentsecond.csproj", "{51823ED6-9417-4BCD-A8D6-02B506973F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCore.Core", "StudentCore.Core\StudentCore.Core.csproj", "{73566724-E908-4C83-834A-9F1599922CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCore.Core", "StudentCore.Core\StudentCore.Core.csproj", "{73566724-E908-4C83-834A-9F1599922CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student.Repository", "Student.Repository\Student.Repository.csproj", "{0B11D830-846B-4435-ABEC-BA37DCAABCF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Repository", "Student.Repository\Student.Repository.csproj", "{0B11D830-846B-4435-ABEC-BA37DCAABCF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student.Utilities", "Student.Utilities\Student.Utilities.csproj", "{0D9480EE-2783-48B4-AAF9-EB1260F3EB3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Utilities", "Student.Utilities\Student.Utilities.csproj", "{0D9480EE-2783-48B4-AAF9-EB1260F3EB3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student.Entity", "Student.Entity\Student.Entity.csproj", "{6454E878-AF41-4FAD-8307-5D08AAB1BBB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Entity", "Student.Entity\Student.Entity.csproj", "{6454E878-AF41-4FAD-8307-5D08AAB1BBB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student.Services", "Student.Services\Student.Services.csproj", "{EF9BF689-301F-4AAF-A180-6FB9689B478B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Services", "Student.Services\Student.Services.csproj", "{EF9BF689-301F-4AAF-A180-6FB9689B478B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi", "webapi\webapi.csproj", "{04374D00-C80F-47C6-B9B5-6B42858FBBF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{EF9BF689-301F-4AAF-A180-6FB9689B478B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF9BF689-301F-4AAF-A180-6FB9689B478B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF9BF689-301F-4AAF-A180-6FB9689B478B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04374D00-C80F-47C6-B9B5-6B42858FBBF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04374D00-C80F-47C6-B9B5-6B42858FBBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04374D00-C80F-47C6-B9B5-6B42858FBBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04374D00-C80F-47C6-B9B5-6B42858FBBF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
