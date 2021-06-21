@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace webapi.Controllers
 {
     
-    public class BaseApiController : ControllerBase
+    public class BaseController : ControllerBase
     {
     }
 }
